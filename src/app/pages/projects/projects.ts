@@ -34,9 +34,9 @@ export class ProjectsComponent {
       github: null,
       demo: null,
       images: [
-        'assets/images/projects/taller-1.jpg',
-        'assets/images/projects/taller-2.jpg',
-        'assets/images/projects/taller-3.jpg',
+        'assets/images/projects/taller/taller-1.png',
+        'assets/images/projects/taller/taller-2.png',
+        'assets/images/projects/taller/taller-3.png',
       ],
     },
     {
