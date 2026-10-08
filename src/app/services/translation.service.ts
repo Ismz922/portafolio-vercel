@@ -25,7 +25,6 @@ export class TranslationService {
     'nav.contact': { es: 'Contacto', en: 'Contact' },
     'nav.download.cv': { es: 'Descargar CV', en: 'Download CV' },
     'nav.fullstack.dev': { es: 'FULL-STACK DEV', en: 'FULL-STACK DEV' },
-    
 
     // Home - Hero
     'home.available': { es: 'Disponible para oportunidades', en: 'Available for opportunities' },
@@ -63,6 +62,49 @@ export class TranslationService {
     'projects.demo': { es: 'Demo', en: 'Live Demo' },
     'projects.professional': { es: 'Proyecto Profesional', en: 'Professional Project' },
     'projects.completed': { es: 'Completado', en: 'Completed' },
+    // Proyectos - Títulos
+    'projects.0.title': {
+      es: 'Sistema de Gestión para Taller Mecánico',
+      en: 'Management System for Auto Repair Shop',
+    },
+    'projects.1.title': {
+      es: 'Digitalización de Ventas - Pastas Roma',
+      en: 'Sales Digitalization - Pastas Roma',
+    },
+
+    // Proyectos - Descripciones
+    'projects.0.description': {
+      es: 'Aplicación full-stack para administrar vehículos, historial de reparaciones y clientes en entorno local. Desarrollada con Angular, TypeScript, Prisma ORM y MySQL.',
+      en: 'Full-stack application to manage vehicles, repair history and customers in a local environment. Developed with Angular, TypeScript, Prisma ORM and MySQL.',
+    },
+    'projects.1.description': {
+      es: 'Módulos funcionales para el proceso de solicitudes de promociones en el área de ventas. Desarrollo con Laravel, PHP y MySQL, mejorando la eficiencia operativa.',
+      en: 'Functional modules for the promotion request process in the sales area. Developed with Laravel, PHP and MySQL, improving operational efficiency.',
+    },
+
+    // Proyectos - Fechas
+    'projects.0.date': {
+      es: 'Ago 2025 - Dic 2025',
+      en: 'Aug 2025 - Dec 2025',
+    },
+    'projects.1.date': {
+      es: 'May 2026 - Ago 2026',
+      en: 'May 2026 - Aug 2026',
+    },
+
+    // Proyectos - Tipos y Estados
+    'projects.type.fullstack': {
+      es: 'Full-Stack',
+      en: 'Full-Stack',
+    },
+    'projects.status.completed': {
+      es: 'Completado',
+      en: 'Completed',
+    },
+    'projects.status.inprogress': {
+      es: 'En progreso',
+      en: 'In Progress',
+    },
 
     // Contact
     'contact.title': { es: 'Contacto', en: 'Contact' },

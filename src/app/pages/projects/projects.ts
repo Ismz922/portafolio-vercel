@@ -21,15 +21,10 @@ export class ProjectsComponent {
   modalProjectId: number | null = null;
   modalImages: string[] = [];
 
+  // ✅ Solo datos técnicos (las imágenes y tecnologías)
   projects = [
     {
       id: 0,
-      title: 'Sistema de Gestión para Taller Mecánico',
-      date: 'Ago 2025 - Dic 2025',
-      type: 'Full-Stack',
-      status: 'Completado',
-      description:
-        'Aplicación full-stack para administrar vehículos, historial de reparaciones y clientes en entorno local. Desarrollada con Angular, TypeScript, Prisma ORM y MySQL.',
       technologies: ['Angular', 'TypeScript', 'Prisma ORM', 'MySQL', 'Node.js'],
       github: null,
       demo: null,
@@ -41,12 +36,6 @@ export class ProjectsComponent {
     },
     {
       id: 1,
-      title: 'Digitalización de Ventas - Pastas Roma',
-      date: 'May 2026 - Ago 2026',
-      type: 'Full-Stack',
-      status: 'Completado',
-      description:
-        'Módulos funcionales para el proceso de solicitudes de promociones en el área de ventas. Desarrollo con Laravel, PHP y MySQL, mejorando la eficiencia operativa.',
       technologies: ['Laravel', 'PHP', 'MySQL', 'Blade', 'Bootstrap'],
       github: null,
       demo: null,
@@ -63,20 +52,25 @@ export class ProjectsComponent {
     return this.languageService.translate(key);
   }
 
-  // ✅ Método para traducir el estado
-  getStatusTranslation(status: string): string {
-    if (status === 'Completado') {
-      return this.t('projects.completed');
-    }
-    return status;
+  // ✅ Método para traducir textos de proyectos
+  getProjectTitle(projectId: number): string {
+    return this.t(`projects.${projectId}.title`);
   }
 
-  // ✅ Método para traducir el tipo de proyecto
-  getTypeTranslation(type: string): string {
-    if (type === 'Full-Stack') {
-      return 'Full-Stack';
-    }
-    return type;
+  getProjectDescription(projectId: number): string {
+    return this.t(`projects.${projectId}.description`);
+  }
+
+  getProjectDate(projectId: number): string {
+    return this.t(`projects.${projectId}.date`);
+  }
+
+  getProjectType(): string {
+    return this.t('projects.type.fullstack');
+  }
+
+  getProjectStatus(): string {
+    return this.t('projects.status.completed');
   }
 
   prevImage(projectId: number, event: Event) {
@@ -120,7 +114,8 @@ export class ProjectsComponent {
     if (project) {
       this.modalOpen = true;
       this.modalProjectId = projectId;
-      this.modalTitle = project.title;
+      // ✅ Traducir el título del modal
+      this.modalTitle = this.getProjectTitle(projectId);
       this.modalImages = project.images;
       this.modalIndex = imageIndex;
       this.modalImage = project.images[imageIndex];
