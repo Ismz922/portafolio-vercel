@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 import { NavbarComponent } from './components/navbar/navbar';
 import { FooterComponent } from './components/footer/footer';
+import { LanguageService } from './services/lenguage.service';
 
 @Component({
   selector: 'app-root',
@@ -21,4 +23,18 @@ import { FooterComponent } from './components/footer/footer';
     }
   `]
 })
-export class AppComponent {}
+export class AppComponent {
+   private languageService = inject(LanguageService);
+  private titleService = inject(Title);
+
+  constructor() {
+    // ✅ Actualizar el título cuando cambia el idioma
+    effect(() => {
+      const lang = this.languageService.getLang()();
+      const title = lang === 'en' 
+        ? 'Portfolio | Isaac Salazar' 
+        : 'Portafolio | Isaac Salazar';
+      this.titleService.setTitle(title);
+    });
+  }
+}

@@ -11,12 +11,12 @@ export interface Translations {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TranslationService {
   private currentLang: WritableSignal<Language> = signal<Language>('es');
   private availableLangs: Language[] = ['es', 'en'];
-  
+
   // Diccionario de traducciones
   private translations: Translations = {
     // Navbar
@@ -26,54 +26,60 @@ export class TranslationService {
     'nav.download.cv': { es: 'Descargar CV', en: 'Download CV' },
     'nav.fullstack.dev': { es: 'FULL-STACK DEV', en: 'FULL-STACK DEV' },
     
+
     // Home - Hero
     'home.available': { es: 'Disponible para oportunidades', en: 'Available for opportunities' },
     'home.hello': { es: 'Hola, soy', en: 'Hello, I am' },
-    'home.title': { es: 'Desarrollador Full-Stack & Analista de Datos', en: 'Full-Stack Developer & Data Analyst' },
-    'home.description': { 
+    'home.title': {
+      es: 'Desarrollador Full-Stack & Analista de Datos',
+      en: 'Full-Stack Developer & Data Analyst',
+    },
+    'home.description': {
       es: 'Estudiante de Ingeniería del Software con experiencia en JavaScript, TypeScript, Angular, Laravel y Python. Especializado en crear soluciones tecnológicas eficientes que optimizan procesos y generan valor.',
-      en: 'Software Engineering student with experience in JavaScript, TypeScript, Angular, Laravel and Python. Specialized in creating efficient technological solutions that optimize processes and generate value.'
+      en: 'Software Engineering student with experience in JavaScript, TypeScript, Angular, Laravel and Python. Specialized in creating efficient technological solutions that optimize processes and generate value.',
     },
     'home.view.projects': { es: 'Ver Proyectos', en: 'View Projects' },
     'home.contact.me': { es: 'Contactarme', en: 'Contact Me' },
     'home.years.study': { es: 'Años de estudio', en: 'Years of study' },
     'home.projects.done': { es: 'Proyectos realizados', en: 'Projects completed' },
     'home.technologies.mastered': { es: 'Tecnologías dominadas', en: 'Technologies mastered' },
-    
+
     // Home - Skills
     'home.skills.title': { es: 'Stack Tecnológico', en: 'Tech Stack' },
     'home.skills.subtitle': { es: 'Herramientas que domino', en: 'Tools I master' },
-    'home.skills.description': { 
+    'home.skills.description': {
       es: 'Tecnologías con las que he trabajado en proyectos académicos y profesionales',
-      en: 'Technologies I have worked with in academic and professional projects'
+      en: 'Technologies I have worked with in academic and professional projects',
     },
-    
+
     // Projects
-  'projects.title': { es: 'Portafolio', en: 'Portfolio' },
-  'projects.subtitle': { es: 'Mis Proyectos', en: 'My Projects' },
-  'projects.description': { 
-    es: 'Proyectos que he desarrollado para resolver problemas reales, combinando tecnología y creatividad.',
-    en: 'Projects I have developed to solve real problems, combining technology and creativity.'
-  },
-  'projects.code': { es: 'Código', en: 'Code' },
-  'projects.demo': { es: 'Demo', en: 'Live Demo' },
-  'projects.professional': { es: 'Proyecto Profesional', en: 'Professional Project' },
-  'projects.completed': { es: 'Completado', en: 'Completed' },
-    
-    
+    'projects.title': { es: 'Portafolio', en: 'Portfolio' },
+    'projects.subtitle': { es: 'Mis Proyectos', en: 'My Projects' },
+    'projects.description': {
+      es: 'Proyectos que he desarrollado para resolver problemas reales, combinando tecnología y creatividad.',
+      en: 'Projects I have developed to solve real problems, combining technology and creativity.',
+    },
+    'projects.code': { es: 'Código', en: 'Code' },
+    'projects.demo': { es: 'Demo', en: 'Live Demo' },
+    'projects.professional': { es: 'Proyecto Profesional', en: 'Professional Project' },
+    'projects.completed': { es: 'Completado', en: 'Completed' },
+
     // Contact
     'contact.title': { es: 'Contacto', en: 'Contact' },
     'contact.subtitle': { es: '¿Tienes un proyecto en mente?', en: 'Have a project in mind?' },
-    'contact.description': { 
+    'contact.description': {
       es: 'Estoy siempre abierto a nuevas oportunidades y colaboraciones. Hablemos sobre cómo puedo ayudarte.',
-      en: 'I am always open to new opportunities and collaborations. Let\'s talk about how I can help you.'
+      en: "I am always open to new opportunities and collaborations. Let's talk about how I can help you.",
     },
     'contact.email': { es: 'Email', en: 'Email' },
     'contact.phone': { es: 'Teléfono', en: 'Phone' },
     'contact.linkedin': { es: 'LinkedIn', en: 'LinkedIn' },
     'contact.github': { es: 'GitHub', en: 'GitHub' },
     'contact.quick.response': { es: 'Respuesta rápida', en: 'Quick response' },
-    'contact.quick.response.desc': { es: 'Respondo en menos de 24 horas', en: 'I reply in less than 24 hours' },
+    'contact.quick.response.desc': {
+      es: 'Respondo en menos de 24 horas',
+      en: 'I reply in less than 24 hours',
+    },
     'contact.connect.linkedin': { es: 'Conectar en LinkedIn', en: 'Connect on LinkedIn' },
     'contact.view.repos': { es: 'Ver repositorios', en: 'View repositories' },
     'contact.full.name': { es: 'Nombre completo', en: 'Full name' },
@@ -81,32 +87,38 @@ export class TranslationService {
     'contact.message': { es: 'Mensaje', en: 'Message' },
     'contact.send': { es: 'Enviar Mensaje', en: 'Send Message' },
     'contact.required': { es: 'Campos obligatorios', en: 'Required fields' },
-    'contact.secure': { 
+    'contact.secure': {
       es: 'Tu información está segura. No comparto tus datos con terceros.',
-      en: 'Your information is safe. I do not share your data with third parties.'
+      en: 'Your information is safe. I do not share your data with third parties.',
     },
     'contact.placeholder.name': { es: 'Ej: Juan Pérez', en: 'Ex: John Doe' },
     'contact.placeholder.email': { es: 'ejemplo@correo.com', en: 'example@email.com' },
-    'contact.placeholder.message': { 
+    'contact.placeholder.message': {
       es: 'Cuéntame sobre tu proyecto, idea u oportunidad...',
-      en: 'Tell me about your project, idea or opportunity...'
+      en: 'Tell me about your project, idea or opportunity...',
     },
-    
+
     // Notifications
     'notification.success.title': { es: '¡Mensaje enviado! 🎉', en: 'Message sent! 🎉' },
-    'notification.success.message': { 
+    'notification.success.message': {
       es: 'Gracias {name}, tu mensaje ha sido enviado correctamente. Te responderé en menos de 24 horas.',
-      en: 'Thank you {name}, your message has been sent successfully. I will reply in less than 24 hours.'
+      en: 'Thank you {name}, your message has been sent successfully. I will reply in less than 24 hours.',
     },
     'notification.error.title': { es: 'Error', en: 'Error' },
     'notification.error.fields': { es: 'Campos incompletos', en: 'Incomplete fields' },
-    'notification.error.fields.desc': { es: 'Completa todos los campos.', en: 'Please fill all fields.' },
+    'notification.error.fields.desc': {
+      es: 'Completa todos los campos.',
+      en: 'Please fill all fields.',
+    },
     'notification.error.email': { es: 'Email inválido', en: 'Invalid email' },
-    'notification.error.email.desc': { es: 'Ingresa un correo válido.', en: 'Please enter a valid email.' },
+    'notification.error.email.desc': {
+      es: 'Ingresa un correo válido.',
+      en: 'Please enter a valid email.',
+    },
     'notification.error.send': { es: 'Error al enviar', en: 'Error sending' },
-    'notification.error.send.desc': { 
+    'notification.error.send.desc': {
       es: 'Hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente.',
-      en: 'There was a problem sending your message. Please try again.'
+      en: 'There was a problem sending your message. Please try again.',
     },
   };
 
@@ -121,7 +133,7 @@ export class TranslationService {
         this.currentLang.set(savedLang);
       }
     }
-    
+
     // Guardar en localStorage cuando cambia
     effect(() => {
       localStorage.setItem('lang', this.currentLang());
@@ -173,21 +185,21 @@ export class TranslationService {
   translate(key: string, params?: { [key: string]: string }): string {
     const lang = this.currentLang();
     const translation = this.translations[key];
-    
+
     if (!translation) {
       console.warn(`⚠️ Traducción no encontrada para: "${key}"`);
       return key;
     }
-    
+
     let text = translation[lang] || translation['es'] || key;
-    
+
     // Reemplazar parámetros
     if (params) {
-      Object.keys(params).forEach(param => {
+      Object.keys(params).forEach((param) => {
         text = text.replace(`{${param}}`, params[param]);
       });
     }
-    
+
     return text;
   }
 

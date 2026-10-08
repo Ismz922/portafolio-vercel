@@ -59,4 +59,13 @@ export class NavbarComponent implements OnInit {
   t(key: string): string {
     return this.languageService.translate(key);
   }
+
+    getCvPath(): string {
+    return this.languageService.getCvPath();
+  }
+
+  // ✅ NUEVO: Nombre del archivo al descargar
+  getCvFileName(): string {
+    return this.languageService.getCvFileName();
+  }
 }

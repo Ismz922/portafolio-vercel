@@ -65,14 +65,28 @@
 
       <div class="flex-1 flex justify-center lg:justify-end">
         <div class="relative">
+          <!-- Fondo con blur -->
           <div
             class="absolute -inset-4 bg-gradient-to-br from-blue-100/50 to-indigo-100/50 rounded-full blur-2xl"
           ></div>
+
+          <!-- Foto de perfil -->
           <div
-            class="relative w-72 h-72 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-8xl shadow-2xl shadow-blue-500/30 ring-4 ring-white/80"
+            class="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl shadow-blue-500/30 ring-4 ring-white/80 bg-gradient-to-br from-blue-600 to-indigo-700"
           >
-            <span class="filter drop-shadow-lg">👨‍💻</span>
+            <img
+              src="assets/images/picture/fotoPasaporte.png"
+              alt="Isaac Salazar"
+              class="w-full h-full object-cover"
+              onerror="
+                this.style.display = 'none';
+                this.parentElement.innerHTML =
+                  '<div class=\'w-full h-full flex items-center justify-center text-8xl\'>👨‍💻</div>';
+              "
+            />
           </div>
+
+          <!-- Badge de Angular -->
           <div
             class="absolute -bottom-2 -right-2 bg-white rounded-full p-3 shadow-xl border border-slate-100"
           >
